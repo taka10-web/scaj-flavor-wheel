@@ -226,7 +226,7 @@ export default function FlavorWheel({ selectedFlavors, onToggleFlavor, lang }: F
 
   return (
     <div id="flavor-wheel-container">
-      <svg viewBox="-20 -20 1040 1040" style={{ width: "100%", height: "auto" }}>
+      <svg viewBox="50 50 900 900" style={{ width: "100%", height: "auto", overflow: "visible" }}>
         <circle cx={CX} cy={CY} r={98} fill="#fff" />
         {segments}
       </svg>

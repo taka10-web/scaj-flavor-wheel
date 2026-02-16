@@ -659,10 +659,12 @@
   }
 
   .app-main {
-    padding: 0.5rem;
+    padding: 0;
+    align-items: center;
   }
 
   .app-main #flavor-wheel-container {
     max-width: none;
+    width: 100%;
   }
 }
