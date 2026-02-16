@@ -85,6 +85,11 @@ const INITIAL_WEIGHTS = LEAF_LIST.map(() => 1);
 
 export default function FlavorWheel({ selectedFlavors, onToggleFlavor, lang }: FlavorWheelProps) {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const canHoverRef = useRef(false);
+
+  useEffect(() => {
+    canHoverRef.current = window.matchMedia("(hover: hover)").matches;
+  }, []);
 
   const currentWeightsRef = useRef<number[]>([...INITIAL_WEIGHTS]);
   const targetWeightsRef = useRef<number[]>([...INITIAL_WEIGHTS]);
@@ -126,10 +131,12 @@ export default function FlavorWheel({ selectedFlavors, onToggleFlavor, lang }: F
   }, []);
 
   const handleHoverEnter = useCallback((id: string) => {
+    if (!canHoverRef.current) return;
     setHoveredId(id);
   }, []);
 
   const handleHoverLeave = useCallback(() => {
+    if (!canHoverRef.current) return;
     setHoveredId(null);
   }, []);
 

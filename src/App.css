@@ -668,22 +668,21 @@
 
   .app-main {
     padding: 0;
+    display: grid;
+    place-items: center;
     overflow-y: auto;
     min-height: 0;
   }
 
-  /* Wheel: fill remaining space, center the SVG */
   .app-main #flavor-wheel-container {
     max-width: none;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .score-sheet,
   .saved-notes {
     padding: 0.75rem;
+    align-self: start;
+    width: 100%;
   }
 }
