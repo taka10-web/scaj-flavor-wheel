@@ -650,6 +650,13 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .app {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
   .app-header {
     padding: 0.5rem 1rem;
   }
@@ -661,10 +668,17 @@
   .app-main {
     padding: 0;
     align-items: center;
+    overflow-y: auto;
+    min-height: 0;
   }
 
   .app-main #flavor-wheel-container {
     max-width: none;
     width: 100%;
+  }
+
+  .score-sheet,
+  .saved-notes {
+    padding: 0.75rem;
   }
 }
