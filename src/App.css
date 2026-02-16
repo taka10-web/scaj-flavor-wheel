@@ -659,6 +659,7 @@
 
   .app-header {
     padding: 0.5rem 1rem;
+    flex-shrink: 0;
   }
 
   .app-header h1 {
@@ -667,14 +668,18 @@
 
   .app-main {
     padding: 0;
-    align-items: center;
     overflow-y: auto;
     min-height: 0;
   }
 
+  /* Wheel: fill remaining space, center the SVG */
   .app-main #flavor-wheel-container {
     max-width: none;
     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .score-sheet,
